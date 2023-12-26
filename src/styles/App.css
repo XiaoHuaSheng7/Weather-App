@@ -1,0 +1,197 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+/** Navbar */
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 15px;
+}
+
+.navbar h1 {
+    display: flex;
+    font-weight: normal;
+}
+
+.title {
+    display: flex;
+    font-size: 15px;
+}
+
+/** City */
+
+.city {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.city h2 {
+    margin: 30px 0px 0px 0px;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.city p {
+    margin: 0px;
+    font-size: 30px;
+    font-weight: normal;
+    color: grey;
+}
+
+/** Temperature */
+
+.temperature {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    letter-spacing: 4px;
+}
+
+.temperature h2 {
+    color: #3F50B5;
+    font-size: 80px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.temperature h2::after {
+    display: flex;
+    content: "";
+    border: 1px solid grey;
+}
+
+.temperature sup {
+    font-size: 55px;
+}
+
+/** MinMax */
+
+.description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.description p {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    font-weight: normal;
+    color: grey;
+}
+
+/** MaxMin */
+
+.maxMin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.maxMin p {
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.max {
+    color: #3F50B5;
+}
+
+.min {
+    color: #2196F3;
+}
+
+.maxMin span {
+    color: grey;
+    margin-inline: 5px;
+}
+
+/** Forecast */
+
+.forecast{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.forecastBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(11, 11, 11, 11);
+    width: 375px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 5px;
+    overflow-x: auto;
+}
+
+.forecastBox h3{
+    width: 90%;
+    margin: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.forecastRow{
+    display: flex;
+    flex-direction: row;
+    align-self: start;
+}
+
+.forecastResults{
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    margin-inline: 10px;
+    align-items: center;
+    gap: 4px;
+}
+
+.time{
+    font-size: 16px;
+    margin: 0px;
+}
+
+.temp{
+    font-size: 18px;
+    margin: 0px;
+}
+
+.wind{
+    color: grey;
+    font-size: 15px;
+    margin: 0px;
+}
+
+.precipitation{
+    color: #2196F3;
+    margin: 0px;
+    font-size: 16px;
+}
+
+/** Footer */
+
+.footer{
+    display: flex;
+    font-size: 14px;
+    font-weight: normal;
+    width: auto;
+    height: 100%;
+    color: grey;
+    align-items: flex-end;
+    justify-content: center;    
+}
