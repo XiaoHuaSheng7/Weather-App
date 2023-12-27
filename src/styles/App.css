@@ -3,6 +3,8 @@
     flex-direction: column;
     width: 100%;
     height: 100vh;
+    z-index: 1;
+    user-select: none;
 }
 
 /** Navbar */
@@ -13,6 +15,12 @@
     align-items: center;
     justify-content: space-between;
     margin: 5px 15px;
+}
+
+.navbarIcon {
+    display: flex;
+    padding: 7px;
+    cursor: pointer;
 }
 
 .navbar h1 {
@@ -46,6 +54,22 @@
     color: grey;
 }
 
+/** DateTime */
+
+.dateTime {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.dateTime p {
+    font-size: 20px;
+    color: grey;
+    margin: 0px;
+}
+
 /** Temperature */
 
 .temperature {
@@ -57,7 +81,7 @@
 
 .temperature h2 {
     color: #3F50B5;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 400;
     margin-top: 20px;
     margin-bottom: 0px;
@@ -70,10 +94,10 @@
 }
 
 .temperature sup {
-    font-size: 55px;
+    font-size: 35px;
 }
 
-/** MinMax */
+/** Description */
 
 .description {
     display: flex;
@@ -84,100 +108,72 @@
 
 .description p {
     margin-top: 15px;
-    margin-bottom: 0px;
-    font-size: 30px;
+    margin-bottom: 35px;
+    font-size: 25px;
     font-weight: normal;
     color: grey;
-}
-
-/** MaxMin */
-
-.maxMin {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.maxMin p {
-    font-size: 20px;
-    font-weight: normal;
-    letter-spacing: 1px;
-}
-
-.max {
-    color: #3F50B5;
-}
-
-.min {
-    color: #2196F3;
-}
-
-.maxMin span {
-    color: grey;
-    margin-inline: 5px;
 }
 
 /** Forecast */
 
-.forecast{
+.forecast {
     display: flex;
     width: 100%;
     height: auto;
     justify-content: center;
 }
 
-.forecastBox{
+.forecastBox {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgba(11, 11, 11, 11);
-    width: 375px;
+    min-width: 300px;
     border-radius: 12px;
     margin-bottom: 20px;
     padding: 5px;
     overflow-x: auto;
 }
 
-.forecastBox h3{
+.forecastBox h3 {
     width: 90%;
     margin: 5px;
     margin-bottom: 10px;
     text-align: left;
 }
 
-.forecastRow{
+.forecastRow {
     display: flex;
     flex-direction: row;
     align-self: start;
 }
 
-.forecastResults{
+.forecastResults {
     display: flex;
     flex-direction: column;
-    width: 70px;
+    width: 55px;
     margin-inline: 10px;
     align-items: center;
     gap: 4px;
 }
 
-.time{
+.time {
     font-size: 16px;
     margin: 0px;
 }
 
-.temp{
+.temp {
     font-size: 18px;
     margin: 0px;
 }
 
-.wind{
+.wind {
     color: grey;
-    font-size: 15px;
+    font-size: 13px;
     margin: 0px;
 }
 
-.precipitation{
+.precipitation {
     color: #2196F3;
     margin: 0px;
     font-size: 16px;
@@ -185,13 +181,74 @@
 
 /** Footer */
 
-.footer{
+.footer {
     display: flex;
     font-size: 14px;
     font-weight: normal;
     width: auto;
-    height: 100%;
+    height: auto;
     color: grey;
     align-items: flex-end;
-    justify-content: center;    
+    justify-content: center;
+}
+
+/** Modal Input */
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    opacity: 1;
+    width: 100%;
+    height: 100vh;
+    user-select: none;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    align-items: center;
+    background-color: #3c3d44;
+    border-radius: 22px;
+    margin-top: 10px;
+}
+
+.modal input {
+    width: 100%;
+    height: auto;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    align-self: self-start;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    padding: 7px 10px;
+    font-size: 16px;
+}
+
+.modal .goBack {
+    display: flex;
+    background-color: transparent;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.modal input::placeholder {
+    color: white;
+}
+
+.modal .letter{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: 0px;
+    font-size: 25px;
+    text-align: center;
+    justify-content: center;
+    color: grey;
 }

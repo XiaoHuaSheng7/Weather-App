@@ -1,8 +1,8 @@
 
-export function Description(){
-    return(
+export function Description({ forecast }) {
+    return (
         <div className="description">
-            <p>Sunny</p>
+            <p>{forecast[0].weather}</p>
         </div>
     )
 }
