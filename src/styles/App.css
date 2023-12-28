@@ -1,3 +1,10 @@
+:root {
+    --black: #17181f;
+    --blue: #6c72cb;
+    --pink: #cb69c1;
+    --white: #eeedf0;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -21,6 +28,8 @@
     display: flex;
     padding: 7px;
     cursor: pointer;
+    border-radius: 25%;
+    box-shadow: var(--blue) 0px 1px 4px, var(--pink) 0px 0px 3px 2px;
 }
 
 .navbar h1 {
@@ -37,14 +46,15 @@
 
 .city {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .city h2 {
-    margin: 30px 0px 0px 0px;
+    margin: 15px 0px 0px 0px;
     font-size: 40px;
     font-weight: normal;
+    text-shadow: var(--pink) 0 0 12px, var(--pink) 0 0 18px, var(--white) 0 0 6px ;
 }
 
 .city p {
@@ -54,20 +64,21 @@
     color: grey;
 }
 
-/** DateTime */
+/** Country */
 
-.dateTime {
+.country{
     display: flex;
     flex-direction: row;
-    width: 100%;
-    height: auto;
     justify-content: center;
 }
 
-.dateTime p {
-    font-size: 20px;
-    color: grey;
+.country h3{
     margin: 0px;
+    font-size: 25px;
+    font-weight: normal;
+    color: var(--blue);
+    text-shadow: var(--black) 0 0 5px, var(--blue) 0 0 20px, var(--blue) 0 0 5px ;
+    text-decoration:underline;
 }
 
 /** Temperature */
@@ -80,17 +91,12 @@
 }
 
 .temperature h2 {
-    color: #3F50B5;
+    color: var(--white);
     font-size: 60px;
     font-weight: 400;
     margin-top: 20px;
     margin-bottom: 0px;
-}
-
-.temperature h2::after {
-    display: flex;
-    content: "";
-    border: 1px solid grey;
+    text-shadow: var(--black) 0 0 5px, var(--blue) 0 0 20px, var(--white) 0 0 5px ;
 }
 
 .temperature sup {
@@ -107,11 +113,28 @@
 }
 
 .description p {
-    margin-top: 15px;
+    margin-top: 0px;
     margin-bottom: 35px;
     font-size: 25px;
     font-weight: normal;
+    color: var(--white);
+    text-shadow: var(--black) 0 0 5px, var(--blue) 0 0 20px, var(--white) 0 0 5px ;
+}
+
+/** DateTime */
+/*! Sacado */
+.dateTime {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.dateTime p {
+    font-size: 20px;
     color: grey;
+    margin: 0px;
 }
 
 /** Forecast */
@@ -127,10 +150,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(11, 11, 11, 11);
+    background-color: var(--black);
+    box-shadow: var(--blue) 0px 1px 4px, var(--pink) 0px 0px 3px 2px inset;
     min-width: 300px;
     border-radius: 12px;
     margin-bottom: 20px;
+    margin-inline: 10px;
     padding: 5px;
     overflow-x: auto;
 }
@@ -167,29 +192,32 @@
     margin: 0px;
 }
 
-.wind {
-    color: grey;
-    font-size: 13px;
-    margin: 0px;
+.precipitationBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
 }
 
 .precipitation {
-    color: #2196F3;
     margin: 0px;
-    font-size: 16px;
+    font-size: 15px;
+}
+
+.UilRaindropsAlt{
+    color: #2196F3
 }
 
 /** Footer */
 
 .footer {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     font-size: 14px;
     font-weight: normal;
-    width: auto;
-    height: auto;
-    color: grey;
-    align-items: flex-end;
-    justify-content: center;
+    color: var(--white);
 }
 
 /** Modal Input */

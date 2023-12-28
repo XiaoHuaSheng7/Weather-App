@@ -1,24 +1,23 @@
 import { UilCloud } from '@iconscout/react-unicons'
-import { UilWind } from '@iconscout/react-unicons'
-import { UilUmbrella } from '@iconscout/react-unicons'
+import { UilRaindropsAlt } from '@iconscout/react-unicons'
 
-export function Forecast({ forecast }) {
+export function Forecast({ weather, city }) {
 
     return (
         <div className="forecast">
             <div className="forecastBox">
-                <h3>Pronóstico de hoy</h3>
+                <h3>{city.adminAreaName}</h3>
                 <div className="forecastRow">
                     {
-                        forecast.map( forecast => (
-                            <div key={forecast.id} className='forecastResults'>
-                                <p className='time'>{forecast.time}</p>
+                        weather.map(res => (
+                            <div key={res.id} className='forecastResults'>
+                                <p className='time'>{res.time}</p>
                                 <UilCloud size={35} />
-                                <p className='temp'>{forecast.temperature}°C</p>
-                                <UilWind size={35} />
-                                <p className='wind'>{forecast.wind} km/h</p>
-                                <UilUmbrella size={35} />
-                                <p className='precipitation'>{forecast.precipitation}%</p>
+                                <p className='temp'>{res.temperature}°</p>
+                                <div className='precipitationBox'>
+                                    <UilRaindropsAlt className="UilRaindropsAlt" size={20} />
+                                    <p className='precipitation'>{res.precipitation}%</p>
+                                </div>
                             </div>
                         ))
                     }

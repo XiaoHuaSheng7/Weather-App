@@ -1,29 +1,43 @@
-import withResponse from '../mocks/withResponse.json'
+import cityResponse from '../mocks/cityResponse.json'
+import weatherResponse from '../mocks/weatherResponse.json'
 import { v4 as uuidv4 } from 'uuid';
+import { format } from 'date-fns';
+
 
 export function useWeather() {
-    const response = withResponse.hourly.data
-    const weatherForecast = response.slice(0, 4)
+    const cityJson = cityResponse
+    const weatherJson = weatherResponse
 
-    const forecast = weatherForecast?.map(day => {
-        const date = new Date(day.date);
-        const formattedTime = date.toLocaleTimeString('en-US', {
-            hour: 'numeric',
-            minute: 'numeric'
-        });
-
+    const cityRes = cityJson.map(res => {
         return {
-            time: formattedTime.slice(0, -3),
-            temperature: Math.round(day.temperature),
-            weather: day.weather,
-            wind: Math.round(day.wind.speed),
-            precipitation: Math.round(day.precipitation.total)
-        };
-    });
+            cityName: res.LocalizedName,
+            cityKey: res.Key,
+            countryName: res.Country.LocalizedName,
+            adminAreaName: res.AdministrativeArea.EnglishName
+        }
+    })
+    
+    const city = cityRes[0]
 
-    forecast.forEach( forecast => {
-        forecast.id = uuidv4()
+    const weather = weatherJson.map(res => {
+        const formattedTime = format(new Date(res.DateTime), 'HH:mm');
+        return {
+            time: formattedTime,
+            weather: res.IconPhrase,
+            temperature: Math.round(res.Temperature.Value),
+            realFeel: Math.round(res.RealFeelTemperature.Value),
+            wind: Math.round(res.Wind.Speed.Value),
+            humidity: Math.round(res.RelativeHumidity),
+            visibility: Math.round(res.Visibility.Value),
+            uv: res.UVIndexText,
+            precipitation: Math.round(res.PrecipitationProbability),
+            snow: Math.round(res.SnowProbability)
+        }
     })
 
-    return ({ forecast })
+    weather.forEach(r => {
+        r.id = uuidv4()
+    })
+
+    return ({city, weather})
 }

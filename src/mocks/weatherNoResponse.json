@@ -1,0 +1,5 @@
+{
+    "Code": "400",
+    "Message": "LocationKey is invalid: asd",
+    "Reference": "/forecasts/v1/hourly/12hour/asd"
+}

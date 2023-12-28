@@ -1,8 +1,8 @@
 
-export function DateTime({ forecast }) {
+export function DateTime({ weather }) {
     return (
         <div className="dateTime">
-            <p>{forecast[0].date}</p>
+            <p>{weather[0].time}</p>
         </div>
     )
 }

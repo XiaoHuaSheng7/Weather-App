@@ -1,8 +1,8 @@
 
-export function City() {
+export function City({ city }) {
     return (
         <div className="city">
-            <h2>Buenos Aires</h2>
+            <h2>{city.cityName}</h2>
         </div>
     )
 }

@@ -3,24 +3,28 @@ import { Navbar } from './components/Navbar'
 import { City } from './components/City'
 import { Temperature } from './components/Temperature'
 import { Description } from './components/Description'
-import { DateTime } from './components/DateTime'
 import { Forecast } from './components/Forecast'
 import { Footer } from './components/Footer'
 import { InputModal } from './components/InputModal'
+import { Country } from './components/Country'
 
 import { useWeather } from './hooks/useWeather'
 import { useModal } from './hooks/useModal'
 
 /* 
-TODO: Dar un estilo mas propio a la aplicación, cambiando la paleta de colores y un poco el diseño
-TODO: realizar la funcionalidad de la aplicacion 
+TODO: Agregar los recuadros y componentes para el week forecast y el today forecast. El hourly ya esta echo
+TODO: Agregar functionalidad como opciones
+TODO: Adaptar input a los nuevos estilos
 TODO: realizar el fetch
+
+url:
+apiKey: rU4iyeYH5KZpS1T6iSQs686LPfCJNjhL
+cityKey: 7894
 */
-// https://www.meteosource.com/es/documentation#point
-// style={{opacity: modal ? '0.5' : '1'}
+
 export function App() {
 
-  const { forecast } = useWeather()
+  const { city, weather } = useWeather()
   const { modal, setModal } = useModal()
 
   return (
@@ -31,11 +35,11 @@ export function App() {
         ) : (
           <div className='main'>
             <Navbar setModal={setModal} />
-            <City />
-            <DateTime forecast={forecast} />
-            <Temperature forecast={forecast} />
-            <Description forecast={forecast} />
-            <Forecast forecast={forecast} />
+            <City city={city}/>
+            <Country city={city} />
+            <Temperature weather={weather} />
+            <Description weather={weather} />
+            <Forecast city={city} weather={weather} />
             <Footer />
           </div>
         )

@@ -1,8 +1,8 @@
 
-export function Temperature({ forecast }) {
+export function Temperature({ weather }) {
     return (
         <div className="temperature">
-            <h2>{forecast[0].temperature}<sup>°</sup>C</h2>
+            <h2>{weather[0].temperature}<sup>°</sup>C</h2>
         </div>
     )
 }
