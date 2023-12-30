@@ -3,7 +3,8 @@ import { Navbar } from './components/Navbar'
 import { City } from './components/City'
 import { Temperature } from './components/Temperature'
 import { Description } from './components/Description'
-import { Forecast } from './components/Forecast'
+import { HourlyForecast } from './components/HourlyForecast'
+import { TodayForecast } from './components/TodayForecast'
 import { Footer } from './components/Footer'
 import { InputModal } from './components/InputModal'
 import { Country } from './components/Country'
@@ -11,11 +12,12 @@ import { Country } from './components/Country'
 import { useWeather } from './hooks/useWeather'
 import { useModal } from './hooks/useModal'
 
-/* 
-TODO: Agregar los recuadros y componentes para el week forecast y el today forecast. El hourly ya esta echo
-TODO: Agregar functionalidad como opciones
-TODO: Adaptar input a los nuevos estilos
-TODO: realizar el fetch
+/*
+TODO: Agregar el componente para el week forecast.
+TODO: mejorar las pseudoclases css como :hover, :focus, etc.
+TODO: Agregar functionalidad como opciones.
+TODO: Realizar el responsive de la web.
+TODO: realizar el fetch.
 
 url:
 apiKey: rU4iyeYH5KZpS1T6iSQs686LPfCJNjhL
@@ -39,7 +41,8 @@ export function App() {
             <Country city={city} />
             <Temperature weather={weather} />
             <Description weather={weather} />
-            <Forecast city={city} weather={weather} />
+            <TodayForecast weather={weather} />
+            <HourlyForecast city={city} weather={weather} />
             <Footer />
           </div>
         )
@@ -47,4 +50,3 @@ export function App() {
     </div>
   )
 }
-

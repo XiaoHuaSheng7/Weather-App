@@ -54,7 +54,7 @@
     margin: 15px 0px 0px 0px;
     font-size: 40px;
     font-weight: normal;
-    text-shadow: var(--pink) 0 0 12px, var(--pink) 0 0 18px, var(--white) 0 0 6px ;
+    text-shadow: var(--pink) 0 0 12px, var(--pink) 0 0 18px, var(--white) 0 0 6px;
 }
 
 .city p {
@@ -66,19 +66,19 @@
 
 /** Country */
 
-.country{
+.country {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.country h3{
+.country h3 {
     margin: 0px;
     font-size: 25px;
     font-weight: normal;
     color: var(--blue);
-    text-shadow: var(--black) 0 0 5px, var(--blue) 0 0 20px, var(--blue) 0 0 5px ;
-    text-decoration:underline;
+    text-shadow: var(--black) 0 0 5px, var(--blue) 0 0 20px, var(--blue) 0 0 5px;
+    text-decoration: underline;
 }
 
 /** Temperature */
@@ -96,7 +96,7 @@
     font-weight: 400;
     margin-top: 20px;
     margin-bottom: 0px;
-    text-shadow: var(--black) 0 0 5px, var(--blue) 0 0 20px, var(--white) 0 0 5px ;
+    text-shadow: var(--black) 0 0 5px, var(--blue) 0 0 20px, var(--white) 0 0 5px;
 }
 
 .temperature sup {
@@ -118,7 +118,65 @@
     font-size: 25px;
     font-weight: normal;
     color: var(--white);
-    text-shadow: var(--black) 0 0 5px, var(--blue) 0 0 20px, var(--white) 0 0 5px ;
+    text-shadow: var(--black) 0 0 5px, var(--blue) 0 0 20px, var(--white) 0 0 5px;
+}
+
+/** TodayForecast */
+
+.todayForecast {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.todayForecastBox {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black);
+    box-shadow: var(--blue) 0px 1px 4px, var(--pink) 0px 0px 3px 2px inset;
+    width: 95%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.todayForecastItem {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-inline: 5px;
+}
+
+.todayForecastItem .icon{
+    color: var(--blue);
+}
+
+.todayForecastItem p {
+    font-size: 18px;
+    margin-left: 12px;
+    color: var(--white);
+}
+
+.todayForecastItem span {
+    color: var(--white);
+    font-size: 18px;
+    text-align: end;
+    justify-self: flex-end;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.divider {
+    display: flex;
+    flex-direction: row;
+    content: "";
+    box-shadow: var(--blue) 0px 0px 0.5px, var(--pink) 0px 0px 2.5px 1.5px;
+    margin: 5px 7px;
 }
 
 /** DateTime */
@@ -137,43 +195,51 @@
     margin: 0px;
 }
 
-/** Forecast */
+/** Hourly */
 
-.forecast {
+.hourly {
     display: flex;
     width: 100%;
     height: auto;
     justify-content: center;
 }
 
-.forecastBox {
+.hourlyBox {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--black);
     box-shadow: var(--blue) 0px 1px 4px, var(--pink) 0px 0px 3px 2px inset;
-    min-width: 300px;
+    width: 95%;
     border-radius: 12px;
     margin-bottom: 20px;
-    margin-inline: 10px;
     padding: 5px;
     overflow-x: auto;
 }
 
-.forecastBox h3 {
-    width: 90%;
-    margin: 5px;
-    margin-bottom: 10px;
-    text-align: left;
+.hourlyTitle{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    left: 21px;
+    width: max-content;
 }
 
-.forecastRow {
+.hourlyTitle h3{
+    margin: 15px 0px;
+}
+
+.hourlyRow {
     display: flex;
     flex-direction: row;
     align-self: start;
 }
 
-.forecastResults {
+.hourlyResults {
     display: flex;
     flex-direction: column;
     width: 55px;
@@ -182,17 +248,17 @@
     gap: 4px;
 }
 
-.time {
+.hourlyTime {
     font-size: 16px;
     margin: 0px;
 }
 
-.temp {
+.hourlyTemp {
     font-size: 18px;
     margin: 0px;
 }
 
-.precipitationBox{
+.hourlyPrecipitationBox {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -200,12 +266,12 @@
     margin-bottom: 5px;
 }
 
-.precipitation {
+.hourlyPrecipitation {
     margin: 0px;
     font-size: 15px;
 }
 
-.UilRaindropsAlt{
+.hourlyUilRaindropsAlt {
     color: #2196F3
 }
 
@@ -239,6 +305,7 @@
     width: 95%;
     align-items: center;
     background-color: #3c3d44;
+    box-shadow: var(--blue) 0px 1px 4px, var(--pink) 0px 0px 3px 2px;
     border-radius: 22px;
     margin-top: 10px;
 }
@@ -269,7 +336,7 @@
     color: white;
 }
 
-.modal .letter{
+.modal .letter {
     display: flex;
     width: 100%;
     height: auto;
@@ -278,5 +345,6 @@
     font-size: 25px;
     text-align: center;
     justify-content: center;
-    color: grey;
+    color: var(white);
+    text-shadow: var(--black) 0 0 5px, var(--blue) 0 0 20px, var(--blue) 0 0 5px;
 }
