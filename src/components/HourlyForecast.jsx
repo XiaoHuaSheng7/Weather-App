@@ -1,13 +1,13 @@
 import { UilCloud } from '@iconscout/react-unicons'
 import { UilRaindropsAlt } from '@iconscout/react-unicons'
 
-export function HourlyForecast({ weather, city }) {
+export function HourlyForecast({ weather }) {
 
     return (
         <div className="hourly">
             <div className="hourlyBox">
                 <div className='hourlyTitle'>
-                    <h3>{city.adminAreaName}</h3>
+                    <h3>Pronostico de hoy</h3>
                 </div>
                 <div className="hourlyRow">
                     {

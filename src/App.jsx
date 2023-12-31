@@ -8,6 +8,7 @@ import { TodayForecast } from './components/TodayForecast'
 import { Footer } from './components/Footer'
 import { InputModal } from './components/InputModal'
 import { Country } from './components/Country'
+import { WeeklyForecast } from './components/WeeklyForecast'
 
 import { useWeather } from './hooks/useWeather'
 import { useModal } from './hooks/useModal'
@@ -42,7 +43,8 @@ export function App() {
             <Temperature weather={weather} />
             <Description weather={weather} />
             <TodayForecast weather={weather} />
-            <HourlyForecast city={city} weather={weather} />
+            <HourlyForecast weather={weather} />
+            <WeeklyForecast weather={weather} />
             <Footer />
           </div>
         )

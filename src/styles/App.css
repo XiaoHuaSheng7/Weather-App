@@ -152,7 +152,7 @@
     margin-inline: 5px;
 }
 
-.todayForecastItem .icon{
+.todayForecastItem .icon {
     color: var(--blue);
 }
 
@@ -218,7 +218,7 @@
     overflow-x: auto;
 }
 
-.hourlyTitle{
+.hourlyTitle {
     display: flex;
     flex-direction: row;
     align-self: flex-start;
@@ -229,8 +229,8 @@
     width: max-content;
 }
 
-.hourlyTitle h3{
-    margin: 15px 0px;
+.hourlyTitle h3 {
+    margin: 10px 0px;
 }
 
 .hourlyRow {
@@ -275,6 +275,102 @@
     color: #2196F3
 }
 
+/** WeeklyForecast */
+
+.weeklyForecast {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.wf-box{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    background-color: var(--black);
+    box-shadow: var(--blue) 0px 1px 4px, var(--pink) 0px 0px 3px 2px inset;
+    width: 95%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.wf-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.wf-title{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.wf-title h3{
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+.wf-item{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.wf-item-daybox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wf-item-daybox span{
+    color: lightslategrey;
+}
+
+.wf-item-day{
+    font-size: 18px;
+    margin: 0px;
+}
+
+.wf-item-pres{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.wf-UilRaindropsAlt{
+    color: #2196F3;
+}
+
+.wf-item-minmax{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.wf-item-max{
+    padding: 5px;
+    border-radius: 3px;
+    background-color: rgb(255, 98, 0);
+}
+
+.wf-item-min{
+    padding: 5px;
+    border-radius: 3px;
+    background-color: rgb(0, 98, 255);
+}
+
+
+
 /** Footer */
 
 .footer {
@@ -285,6 +381,7 @@
     font-weight: normal;
     color: var(--white);
 }
+
 
 /** Modal Input */
 

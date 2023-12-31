@@ -16,7 +16,7 @@ body{
     padding: 0;
     box-sizing: border-box;
 
-    background-image: url(../../public/images/fondo-weatherApp.jpg);
+    background-image: url(./images/fondo-weatherApp.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
